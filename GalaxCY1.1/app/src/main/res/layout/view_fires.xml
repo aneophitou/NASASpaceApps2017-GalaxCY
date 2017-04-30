@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.andreas.galaxcyprotego.MainActivity">
+
+    <Button
+        android:text="Legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/btnLegend"
+        android:minHeight="34dp"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:text="Change View Mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnChangeView"
+        android:onClick= "changeView()"
+        android:textSize="10sp"
+        android:layout_below="@+id/map"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true" />
+
+    <Spinner
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerSelectOverlay"
+        android:layout_width="150dp"
+        android:layout_alignBottom="@+id/btnChangeView"
+        android:layout_toLeftOf="@+id/btnChangeView"
+        android:layout_toStartOf="@+id/btnChangeView"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_below="@+id/btnFindPath"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="FIND NAV PATH"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNavPath"
+        android:layout_width="115dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/map"
+        android:textSize="18sp"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:text="SOS"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSOS"
+        android:background="@color/colorAccent"
+        android:textSize="36sp"
+        android:textColor="@android:color/white"
+        android:layout_width="115dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/map" />
+
+    <Button
+        android:text="Find Escape Route"
+        android:id="@+id/btnFindPath"
+        android:onClick="downloadData()"
+        android:textSize="18sp"
+        android:layout_height="80dp"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:layout_width="115dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

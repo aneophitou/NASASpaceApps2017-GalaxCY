@@ -1,0 +1,205 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.andreas.galaxcyprotego.ReportTab">
+
+    <TextView
+        android:text="@string/ReportDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewReportTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:id="@+id/textViewReportDescription" />
+
+    <TextView
+        android:text="@string/CheckBoxDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewCheckBoxes"
+        android:layout_below="@+id/textViewReportDescription"
+        android:layout_alignLeft="@+id/textViewReportDescription"
+        android:layout_alignStart="@+id/textViewReportDescription"
+        android:layout_marginTop="14dp" />
+
+    <CheckBox
+        android:text="@string/CheckBoxSmoke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxSmoke"
+        android:layout_below="@+id/checkBoxFire"
+        android:layout_alignLeft="@+id/checkBoxFire"
+        android:layout_alignStart="@+id/checkBoxFire" />
+
+    <CheckBox
+        android:text="@string/CheckBoxAsh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxAsh"
+        android:layout_below="@+id/checkBoxSmoke"
+        android:layout_alignLeft="@+id/checkBoxSmoke"
+        android:layout_alignStart="@+id/checkBoxSmoke" />
+
+    <TextView
+        android:text="@string/ReportTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewReportTitle"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:text="@string/CheckBoxFire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:id="@+id/checkBoxFire"
+        android:layout_below="@+id/textViewCheckBoxes"
+        android:layout_alignLeft="@+id/textViewCheckBoxes"
+        android:layout_alignStart="@+id/textViewCheckBoxes" />
+
+    <CheckBox
+        android:text="@string/CheckBoxRoadblock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxRoadBlock"
+        android:layout_below="@+id/checkBoxSmoke"
+        android:layout_alignLeft="@+id/checkBoxAccident"
+        android:layout_alignStart="@+id/checkBoxAccident" />
+
+    <CheckBox
+        android:text="@string/CheckBoxAccident"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp"
+        android:id="@+id/checkBoxAccident"
+        android:layout_above="@+id/checkBoxRoadBlock"
+        android:layout_alignRight="@+id/textViewCheckBoxes"
+        android:layout_alignEnd="@+id/textViewCheckBoxes" />
+
+    <CheckBox
+        android:text="@string/CheckBoxFlood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxFlood"
+        android:layout_below="@+id/textViewCheckBoxes"
+        android:layout_alignLeft="@+id/checkBoxAccident"
+        android:layout_alignStart="@+id/checkBoxAccident" />
+
+    <EditText
+        android:id="@+id/EditTextOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/txtOther"
+        android:ems="10"
+        android:layout_below="@+id/CheckBoxOther"
+        android:layout_toEndOf="@+id/CheckBoxOther"
+        android:layout_toRightOf="@+id/CheckBoxOther"
+        android:layout_alignLeft="@+id/CheckBoxOther"
+        android:layout_alignStart="@+id/CheckBoxOther"
+        android:selectAllOnFocus="true"
+        android:contextClickable="false"
+        android:cursorVisible="false" />
+
+    <CheckBox
+        android:text="@string/CheckBoxOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CheckBoxOther"
+        android:checked="false"
+        android:layout_below="@+id/checkBoxAsh"
+        android:layout_alignLeft="@+id/checkBoxAsh"
+        android:layout_alignStart="@+id/checkBoxAsh"
+        android:onClick="otherChecked" />
+
+    <TextView
+        android:text="@string/Distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditTextOther"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:id="@+id/textViewDistance"
+        android:layout_toLeftOf="@+id/spinner"
+        android:layout_toStartOf="@+id/spinner" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:dropDownWidth="100dp"
+        android:layout_toRightOf="@+id/checkBoxFlood"
+        android:layout_toEndOf="@+id/checkBoxFlood"
+        android:layout_alignTop="@+id/textViewDistance"
+        android:layout_alignBottom="@+id/textViewDistance" />
+
+    <Button
+        android:text="@string/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSubmit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/eTcallHome"
+        android:inputType="phone"
+        android:textIsSelectable="true"
+        android:layout_above="@+id/btnSubmit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp"
+        android:hint="Enter Your Phone Number"
+        android:layout_toLeftOf="@+id/btnUploadImage"
+        android:layout_toStartOf="@+id/btnUploadImage" />
+
+    <Button
+
+        android:background="@android:drawable/ic_menu_camera"
+        android:id="@+id/btnUploadImage"
+        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/btnSubmit" />
+
+    <TextView
+        android:text="Point the phone in the direction of the hazard:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:hint="Aim your device at the direction of the hazard!"
+        android:layout_above="@+id/btnUploadImage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/btnUploadImage"
+        android:layout_alignRight="@+id/CheckBoxOther"
+        android:layout_alignEnd="@+id/CheckBoxOther" />
+
+</RelativeLayout>

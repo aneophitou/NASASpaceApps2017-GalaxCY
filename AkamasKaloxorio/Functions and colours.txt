@@ -1,0 +1,43 @@
+Manobo colours:
+
+	5- dark red= dead
+	4- red plain
+	3- smoke = orange
+	2- ready - yellow
+	1- green
+
+kamikazi gone for more than 20 mins, turn it brown
+Necessary parameters to pass to function:
+1. colours
+2. file names
+3. 
+
+   latLngToMap(getResources().openRawResource(R.raw.y_0),getResources().openRawResource(R.raw.x_0), "GREEN");
+        latLngToMap(getResources().openRawResource(R.raw.y_1),getResources().openRawResource(R.raw.x_1), "YELLOW");
+        latLngToMap(getResources().openRawResource(R.raw.y_2),getResources().openRawResource(R.raw.x_2), "MAGENTA");
+        latLngToMap(getResources().openRawResource(R.raw.y_3),getResources().openRawResource(R.raw.x_3), "RED");
+        latLngToMap(getResources().openRawResource(R.raw.y_4),getResources().openRawResource(R.raw.x_4), "GRAY");
+
+
+
+
+
+/**Get Latitude values**/
+        InputStream latFile=getResources().openRawResource(R.raw.y__0);
+        List<Double> latList= new ArrayList<Double>();
+        java.lang.Double[] latArray = scanLatLong(latList,latFile);
+        //latArray = reverseArray(latArray);
+
+        /**Get Longitude Values**/
+        InputStream longFile = getResources().openRawResource(R.raw.x__0);
+        List<java.lang.Double> longList = new ArrayList<java.lang.Double>();
+        java.lang.Double[] longArray = scanLatLong((longList),longFile);
+        //longArray = reverseArray(longArray);
+
+        /**Create Circles on map**/
+        for (int i =0; i<latArray.length;i++){
+            CircleOptions polyOp = new CircleOptions();
+            polyOp.center(createLocation(latArray[i],longArray[i]));
+            Circle circ= mMap.addCircle(new CircleOptions().center(createLocation(latArray[i],longArray[i])) .radius(500).fillColor(Color.RED));
+            Log.d("lat,long: ", latArray[i]+","+longArray[i]);
+        }
